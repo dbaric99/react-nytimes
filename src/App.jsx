@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { Home, Top, Popular } from './components';
+import './assets/styles/_index.scss';
 
 function App() {
   return (
