@@ -1,8 +1,11 @@
-import React from 'react'
+import {Header} from './common-components';
 
 function Popular() {
   return (
-    <div>Popular</div>
+    <div>
+      <Header></Header>
+      Popular
+    </div>
   )
 }
 

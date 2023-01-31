@@ -1,8 +1,11 @@
-import React from 'react'
+import { Header } from './common-components';
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <Header />
+      Home
+    </div>
   )
 }
 

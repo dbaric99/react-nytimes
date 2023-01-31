@@ -1,8 +1,11 @@
-import React from 'react'
+import {Header} from './common-components';
 
 function Top() {
   return (
-    <div>Top</div>
+    <div>
+      <Header></Header>
+      Top
+    </div>
   )
 }
 
