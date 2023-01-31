@@ -10,23 +10,23 @@ function Header() {
   },[])
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <LogoSVGComponent height="40px"></LogoSVGComponent>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a id="home" className="nav-link" href="/">
+    <div className="header layout-spacing">
+      <nav className="header__navbar__holder">
+      <LogoSVGComponent class="header__logo" height="40px"></LogoSVGComponent>
+        <div className="header__navbar__wrapper">
+          <ul className="header__navbar">
+            <li className="header__navbar__item">
+              <a id="home" className="header__navbar__link" href="/">
                 Home
               </a>
             </li>
-            <li className="nav-item">
-              <a id="top" className="nav-link" href="/top">
+            <li className="header__navbar__item">
+              <a id="top" className="header__navbar__link" href="/top">
                 Top Articles
               </a>
             </li>
-            <li className="nav-item">
-              <a id="popular" className="nav-link" href="/popular">
+            <li className="header__navbar__item">
+              <a id="popular" className="header__navbar__link" href="/popular">
                 Popular Articles
               </a>
             </li>
