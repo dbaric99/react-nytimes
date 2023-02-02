@@ -1,5 +1,13 @@
-$main-black: #343c44;
-$main-orange: #ce8147;
-$main-blue: #2d93ad;
-$main-white: #f4f3ee;
-$main-pink: #bb7e8c;
+:root {
+    --main-black: #343c44;
+    --main-white: #f4f3ee;
+    --main-orange: #ce8147;
+    --main-blue: #2d93ad;
+    --background: #000;
+}
+
+$main-black: var(--main-black);
+$main-orange: var(--main-orange);
+$main-blue: var(--main-blue);
+$main-white: var(--main-white);
+$background: var(--background);

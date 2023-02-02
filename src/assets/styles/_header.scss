@@ -35,12 +35,20 @@
             font-weight: 500;
             font-family: "stix";
             color: $main-black;
+
+            &:hover {
+                color: $main-blue !important;
+                transition: color .3s ease-in-out;
+            }
             
         }
     }
 
     &__theme__icon {
         justify-self: flex-end;
+        &:hover {
+            cursor: pointer;
+        }
     }
 }
 

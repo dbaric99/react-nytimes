@@ -4,6 +4,7 @@
     border-bottom: 1px solid $main-black;
     display: flex;
     font-family: "stix";
+    color: $main-black;
 
     &__image {
         &__wrapper {
@@ -18,7 +19,7 @@
         &__details {
             display: flex;
             justify-content: space-between;
-            color: $main-orange;
+            color: $main-blue;
         }
     }
 
@@ -36,7 +37,7 @@
             font-size: 25px;
             &:hover {
                 cursor: pointer;
-                color: $main-orange;
+                color: $main-blue;
                 transition: color .3s ease-in-out;
             }
         }
