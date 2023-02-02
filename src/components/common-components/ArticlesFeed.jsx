@@ -4,6 +4,7 @@ import { Article } from '.';
 import axios from "axios";
 import LoaderHOC from '../LoaderHOC';
 import {Spinner} from './Spinner';
+import { TextInput } from "./TextInput";
 
 function ArticlesFeed({ url, setIsLoading }) {
 
@@ -28,12 +29,17 @@ function ArticlesFeed({ url, setIsLoading }) {
       })
   }
 
+  function searchArticles(val) {
+    
+  }
+
   useEffect(() => {
     fetchFeed();
   }, [])
 
   return (
     <div className="article-feed-wrapper">
+      <TextInput handleValueChange={searchArticles}/>
       {error && <h1>Error: { error}</h1>}
       {isLoaded && <div>
         {articles.map((el) => <Article articleData={el}/>)}
