@@ -1,10 +1,12 @@
 .article {
+
     &__image__wrapper {
 
     }
 
     &__image__holder {
-
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     &__date {

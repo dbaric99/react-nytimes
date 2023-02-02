@@ -1,10 +1,10 @@
-import {Header} from './common-components';
+import {ArticlesFeed, Header} from './common-components';
 
 function Popular() {
   return (
     <div>
       <Header></Header>
-      Popular
+      <ArticlesFeed url="https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=h4AzKkB6b6uHAqPH6XQbZUvt8nYGZwEQ" />
     </div>
   )
 }
