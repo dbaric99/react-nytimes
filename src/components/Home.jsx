@@ -1,4 +1,5 @@
-import { Header, ArticlesFeed } from './common-components';
+import { Header } from './common-components';
+import ArticlesFeed from './common-components/ArticlesFeed';
 
 function Home() {
   return (

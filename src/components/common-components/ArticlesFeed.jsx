@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Article } from '.';
 import axios from "axios";
-import { Spinner } from "react-bootstrap";
+import LoaderHOC from '../LoaderHOC';
+import {Spinner} from './Spinner';
 
-function ArticlesFeed({ url }) {
+function ArticlesFeed({ url, setIsLoading }) {
 
   const [articles, setArticles] = useState();
   const [isLoaded, setIsLoaded] = useState();
@@ -29,13 +30,10 @@ function ArticlesFeed({ url }) {
   }, [])
 
   if(error) {
-    console.log("USLO ERR");
     return <h1>Error: {error}</h1>;
   } else if(!isLoaded) {
-    console.log("USLO LOAD");
     return <Spinner />;
   } else {
-    console.log("USLO DATA: ", articles);
     return (
       <div>
         {articles.map((el) => <Article articleData={el}/>)}
@@ -45,7 +43,13 @@ function ArticlesFeed({ url }) {
 }
 
 ArticlesFeed.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  setIsLoading: PropTypes.func
 };
 
-export { ArticlesFeed };
+ArticlesFeed.defaultProps = {
+  setIsLoading: () => {}
+}
+
+//export { ArticlesFeed };
+export default LoaderHOC(ArticlesFeed, { loader: <Spinner type="beat-loader" size={10} message={null} /> });
