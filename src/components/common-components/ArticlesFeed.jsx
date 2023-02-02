@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Article } from '.';
 import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 function ArticlesFeed({ url }) {
 
@@ -32,7 +33,7 @@ function ArticlesFeed({ url }) {
     return <h1>Error: {error}</h1>;
   } else if(!isLoaded) {
     console.log("USLO LOAD");
-    return <h1>...Loading...</h1>;
+    return <Spinner />;
   } else {
     console.log("USLO DATA: ", articles);
     return (
