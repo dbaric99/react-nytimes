@@ -33,7 +33,7 @@ function Article({ articleData }) {
         ></div>
       </aside>
       <div className="article__content">
-        <p className="article__content__title" onClick={handleArticleClick()}>
+        <p className="article__content__title" onClick={handleArticleClick}>
           {articleData?.title}
         </p>
         <p className="article__content__description">{articleData?.abstract}</p>

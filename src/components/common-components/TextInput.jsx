@@ -11,10 +11,9 @@ function TextInput({ handleValueChange }) {
     setSearchInput(e.target.value);
   }
 
-  useEffect(() => {
-    console.log("INPUT: ", searchInput);
+  function handleClick() {
     handleValueChange(searchInput);
-  }, [searchInput]);
+  }
 
   return (
     <div className="text-input__wrapper layout-spacing">
@@ -25,7 +24,7 @@ function TextInput({ handleValueChange }) {
           aria-describedby="basic-addon2"
           onChange={(e) => handleChange(e)}
         />
-        <Button variant="outline-secondary" id="button-addon2">
+        <Button variant="outline-secondary" id="button-addon2" onClick={handleClick}>
           Search
         </Button>
       </InputGroup>

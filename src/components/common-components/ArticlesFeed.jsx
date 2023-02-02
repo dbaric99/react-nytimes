@@ -9,6 +9,7 @@ import { TextInput } from "./TextInput";
 function ArticlesFeed({ url, setIsLoading }) {
 
   const [articles, setArticles] = useState();
+  const [filteredArticles, setFilteredArticles] = useState();
   const [isLoaded, setIsLoaded] = useState();
   const [error, setError] = useState();
 
@@ -30,7 +31,12 @@ function ArticlesFeed({ url, setIsLoading }) {
   }
 
   function searchArticles(val) {
-    
+    if(!articles) return;
+    setFilteredArticles(
+      articles.filter((a) => {
+        return a.title.indexOf(val) !== -1;
+      })
+    );
   }
 
   useEffect(() => {
@@ -41,9 +47,11 @@ function ArticlesFeed({ url, setIsLoading }) {
     <div className="article-feed-wrapper">
       <TextInput handleValueChange={searchArticles}/>
       {error && <h1>Error: { error}</h1>}
-      {isLoaded && <div>
+      {isLoaded && (filteredArticles ? <div>
+        {filteredArticles.map((el) => <Article articleData={el}/>)}
+      </div> : <div>
         {articles.map((el) => <Article articleData={el}/>)}
-      </div>}
+      </div>) }
     </div>
   )
 }
