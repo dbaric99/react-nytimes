@@ -15,9 +15,9 @@
 
     &__navbar {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
         height: 100%;
+        list-style: none;
+        margin-bottom: 0px;
 
         &__wrapper {
 

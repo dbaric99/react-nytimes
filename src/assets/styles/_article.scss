@@ -1,29 +1,48 @@
 .article {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid $main-black;
+    display: flex;
+    font-family: "stix";
 
-    &__image__wrapper {
+    &__image {
+        &__wrapper {
 
-    }
+        }
 
-    &__image__holder {
-        background-size: contain;
-        background-repeat: no-repeat;
+        &__holder {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &__details {
+            display: flex;
+            justify-content: space-between;
+            color: $main-orange;
+        }
     }
 
     &__date {
-
+        font-size: 12px;
     }
 
     &__author {
-
+        font-size: 12px;
     }
 
     &__content {
         &__title {
-
+            font-weight: 900;
+            font-size: 25px;
+            &:hover {
+                cursor: pointer;
+                color: $main-orange;
+                transition: color .3s ease-in-out;
+            }
         }
 
         &__description {
-            
+            font-size: 16px;
         }
     }
 }
