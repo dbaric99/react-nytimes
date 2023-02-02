@@ -1,0 +1,20 @@
+.sweet-loading {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    &.custom-backdrop {
+      position: absolute;
+      z-index: 11;
+    }
+
+    &.beat-loader {
+      &.primary {
+        span {
+          span {
+            background-color: $main-black !important;
+          }
+        }
+      }
+    }
+  }

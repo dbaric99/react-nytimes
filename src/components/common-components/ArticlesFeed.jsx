@@ -12,16 +12,19 @@ function ArticlesFeed({ url, setIsLoading }) {
   const [error, setError] = useState();
 
   function fetchFeed() {
+    setIsLoading(true);
     axios.get(url)
       .then((res) => {
         setArticles(res.data.results);
         setIsLoaded(true);
+        setIsLoading(false);
       })
       .catch((err) => {
         if(!err.message.includes('200')) {
           setError(err.message);
         }
         setIsLoaded(true);
+        setIsLoading(false);
       })
   }
 
@@ -29,17 +32,14 @@ function ArticlesFeed({ url, setIsLoading }) {
     fetchFeed();
   }, [])
 
-  if(error) {
-    return <h1>Error: {error}</h1>;
-  } else if(!isLoaded) {
-    return <Spinner />;
-  } else {
-    return (
-      <div>
+  return (
+    <div className="article-feed-wrapper">
+      {error && <h1>Error: { error}</h1>}
+      {isLoaded && <div>
         {articles.map((el) => <Article articleData={el}/>)}
-      </div>
-    );
-  }
+      </div>}
+    </div>
+  )
 }
 
 ArticlesFeed.propTypes = {
@@ -51,5 +51,4 @@ ArticlesFeed.defaultProps = {
   setIsLoading: () => {}
 }
 
-//export { ArticlesFeed };
-export default LoaderHOC(ArticlesFeed, { loader: <Spinner type="beat-loader" size={10} message={null} /> });
+export default LoaderHOC(ArticlesFeed, { loader: <Spinner type="beat-loader" size={20} /> });

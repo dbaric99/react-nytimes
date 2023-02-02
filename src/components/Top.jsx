@@ -3,7 +3,7 @@ import ArticlesFeed from './common-components/ArticlesFeed';
 
 function Top() {
   return (
-    <div>
+    <div className="page-wrapper">
       <Header></Header>
       <ArticlesFeed url="https://api.nytimes.com/svc/topstories/v2/home.json?api-key=h4AzKkB6b6uHAqPH6XQbZUvt8nYGZwEQ" />
     </div>

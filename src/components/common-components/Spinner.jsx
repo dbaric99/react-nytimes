@@ -23,16 +23,11 @@ function renderSpinnerByType(size, type) {
 }
 
 function Spinner({
-  size, color, type, showMask, maskType, message,
+  size, color, type,
 }) {
   return (
-    <div className={`sweet-loading ${showMask ? 'custom-backdrop show' : ''} ${maskType !== '' ? maskType : ''}  ${type} ${color}`}>
+    <div className={`sweet-loading custom-backdrop show ${type} ${color}`}>
       {renderSpinnerByType(size, type)}
-      {message && (
-      <div className="spinner-message">
-        {message}
-      </div>
-      )}
     </div>
   );
 }
@@ -41,17 +36,11 @@ Spinner.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   type: PropTypes.string,
-  showMask: PropTypes.bool,
-  maskType: PropTypes.string,
-  message: PropTypes.oneOfType([PropTypes.string, PropTypes.oneOf([null])]),
 };
 Spinner.defaultProps = {
   size: 60,
   color: 'primary',
   type: 'beat-loader',
-  showMask: true,
-  maskType: '',
-  message: '',
 };
 
 export { Spinner };
